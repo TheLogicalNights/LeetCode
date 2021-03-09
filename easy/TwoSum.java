@@ -24,9 +24,10 @@
         -109 <= target <= 109
         Only one valid answer exists.
 */
-class Solution 
+import java.util.*;
+class TwoSum 
 {
-    public int[] twoSum(int[] nums, int target) 
+    public static int[] twoSum(int[] nums, int target) 
     {
         int[] arr = new int[2];
         int i=0,j=0;
@@ -51,5 +52,27 @@ class Solution
             arr[1] = j;
         }
         return arr;
+    }
+    public static void main(String args[])
+    {
+        Scanner cin = new Scanner(System.in);
+        System.out.println("How many numbers do you want ?");
+        int iNo = cin.nextInt();
+        int iNums[] = new int[iNo];
+        for(int i=0;i<iNums.length;i++)
+        {
+            iNums[i] = cin.nextInt();
+        }
+        System.out.println("Enter target : ");
+        int iTarget = cin.nextInt();
+
+        int[] iRet = TwoSum.twoSum(iNums,iTarget); 
+        System.out.printf("[ ");
+        for(int i=0;i<iRet.length;i++)
+        {
+            System.out.printf("%d ",iRet[i]);
+        }
+        System.out.printf(" ]");
+        cin.close();
     }
 }
